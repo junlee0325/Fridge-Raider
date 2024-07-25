@@ -1,0 +1,563 @@
+/* Box Model Hack */
+* {
+  box-sizing: border-box;
+}
+
+/* Clear fix hack */
+.clearfix:after {
+  content: ".";
+  display: block;
+  clear: both;
+  visibility: hidden;
+  line-height: 0;
+  height: 0;
+}
+
+.clear {
+  clear: both;
+}
+
+/******************************************
+/* BASE STYLES
+/*******************************************/
+
+/******************************************
+/* LAYOUT
+/*******************************************/
+
+/******************************************
+/* ADDITIONAL STYLES
+/*******************************************/
+
+body {
+  background: rgb(247, 243, 240);
+  font-family: system-ui;
+  margin: 0;
+  padding: 0;
+}
+header {
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: space-evenly;
+  font-weight: bold;
+  color: rgb(0, 0, 0);
+  background-image: url("../img/header-img.jpg");
+  background-size: cover;
+  height: 650px;
+  align-items: center;
+  box-shadow: 0 -60px 30px -10px rgb(247, 243, 240) inset;
+  clear: both;
+}
+#titleBox {
+  width: 40%;
+  background: rgba(255, 153, 0, 0.8);
+  border-radius: 50% 10% 50% 10% / 10% 50% 10% 50%;
+}
+#title {
+  display: flex;
+  justify-content: center;
+  color: white;
+  text-shadow: 2px 2px 4px #000000;
+  text-align: center;
+  top: 0;
+  font-size: 35px;
+}
+.opening {
+  display: flex;
+  justify-content: center;
+  color: white;
+  text-shadow: 2px 2px 4px #000000;
+  text-align: center;
+  font-size: 20px;
+}
+
+/*
+Input Form
+*/
+#inputForm {
+  padding: 0 15%;
+  width: 80%;
+  display: flex;
+  justify-content: center;
+  clear: both;
+}
+#inputBar {
+  border: rgb(255, 153, 0) solid 2px;
+  width: 100%;
+  height: 40px;
+  font-size: 15px;
+  font-weight: bold;
+  border-radius: 25px;
+  background: rgba(22, 22, 22, 0.6);
+  color: rgba(255, 255, 255, 1);
+  padding: 15px;
+}
+#inputBar::placeholder {
+  font-weight: bold;
+  opacity: 1;
+  color: rgb(255, 255, 255);
+}
+#inputBar:focus {
+  background: rgb(255, 255, 255);
+  color: rgb(0, 0, 0);
+  padding: 15px;
+  transition: 0.3s;
+}
+#addBttn {
+  width: 70px;
+  height: 40px;
+  margin-left: 10px;
+  background: rgb(255, 153, 0);
+  color: white;
+  font-weight: bold;
+  border-radius: 25px;
+  border: rgb(255, 153, 0) 2px solid;
+}
+#addBttn:hover {
+  background: rgba(255, 153, 0, 0.6);
+  border: rgba(255, 153, 0, 1) 2px solid;
+  color: white;
+  transition: 0.3s;
+}
+#addBttn:active {
+  transform: translateY(1px);
+}
+/*
+Trivia
+*/
+#triviaDiv{
+  background: rgba(255, 153, 0, 0.5);
+  border-radius: 80px 30px 80px 30px / 30px 80px 30px 80px;
+  margin: 10px;
+}
+#triviaLabel {
+  color: white;
+  text-shadow: 1px 1px 2px black;
+  margin: 0;
+  font-size: 20px;
+  text-decoration: underline;
+  padding: 0;
+  text-align: center;
+}
+#trivia {
+  color: white;
+  text-shadow: 1px 1px 2px black;
+  margin: 0;
+  font-size: 20px;
+  text-align: center;
+  padding: 5px 10px;
+}
+
+/*
+My Ingredients
+*/
+#ingredientDiv {
+  margin: 10px 10%;
+  background: rgba(255, 153, 0, 0.5);
+  border-radius: 30px 80px 30px 80px / 80px 30px 80px 30px;
+  padding: 5px 20px 20px 20px;
+}
+#ingredientTitle {
+  color: white;
+  text-shadow: 2px 2px 4px #000000;
+  font-size: 25px;
+  text-align: center;
+}
+#ingredientList {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  list-style-type: square;
+  padding: 0;
+}
+.listItems {
+  font-size: 15px;
+  color: rgb(0, 0, 0);
+  flex-basis: 20%;
+  background: rgba(255, 255, 255, 0.5);
+  text-align: center;
+  list-style-type: none;
+  border-radius: 50px;
+  margin: 5px;
+  font-weight: bold;
+}
+/*
+Search Clear Button
+*/
+#searchClear {
+  display: flex;
+  justify-content: space-evenly;
+}
+#searchBttn {
+  width: 70px;
+  height: 40px;
+  margin-left: 10px;
+  background: rgb(255, 153, 0);
+  color: white;
+  font-weight: bold;
+  border-radius: 25px;
+  border: rgb(255, 153, 0) 2px solid;
+}
+#searchBttn:hover {
+  background: rgba(255, 153, 0, 0.6);
+  border: rgba(255, 153, 0, 1) 2px solid;
+  color: white;
+  transition: 0.3s;
+}
+#searchBttn:active {
+  transform: translateY(1px);
+}
+#clearBttn {
+  width: 70px;
+  height: 40px;
+  margin-left: 10px;
+  background: rgb(255, 66, 66);
+  color: rgba(255, 255, 255, 1);
+  font-weight: bold;
+  border-radius: 25px;
+  border: rgb(255, 66, 66) 2px solid;
+}
+#clearBttn:hover {
+  background: rgba(255, 66, 66, 0.6);
+  border: rgb(255, 66, 66) 2px solid;
+  color: white;
+  transition: 0.3s;
+}
+#clearBttn:active {
+  transform: translateY(1px);
+}
+
+/*
+Recipes
+*/
+#recipeDiv {
+  margin: 10px 10%;
+  background: rgba(255, 153, 0, 0.5);
+  padding: 5px 20px 20px 20px;
+  border-radius: 80px 30px 80px 30px / 30px 80px 30px 80px;
+}
+#recipeTitle {
+  color: white;
+  text-shadow: 2px 2px 4px #000000;
+  font-size: 25px;
+  text-align: center;
+}
+
+.resultBox{
+  display: flex;
+  flex-flow: row wrap;
+  padding: 0 50px;
+  margin: 20px 0;
+  background: rgb(255, 255, 255);
+  border-radius: 80px 30px 80px 30px / 30px 80px 30px 80px;
+  justify-content: space-evenly;
+}
+.foodName {
+  color: rgb(0, 0, 0);
+  text-shadow: 1px 1px 2px white;
+  font-size: 22px;
+  text-decoration: underline;
+  display: block;
+  flex-basis: 100%;
+}
+.foodImage {
+  border: black dotted 5px;
+  margin: 25px;
+  width: auto;
+  flex-basis: 30%;
+  flex-grow: 1;
+}
+.recipeIngredientContainer {
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: space-evenly;
+  padding: 20px 50px;
+  background:rgba(255, 153, 0, 0.5);
+  border-radius: 80px 30px 80px 30px / 30px 80px 30px 80px;
+  flex-basis: 50%;
+  flex-grow: 1;
+}
+.recipeIngredients{
+  color: rgb(255, 255, 255);
+  text-shadow: 1px 1px 2px rgb(255, 153, 0);
+  font-weight: bold;
+  font-size: 17px;
+  flex-basis: auto;
+}
+.instructions {
+  background:rgba(255, 153, 0, 0.5);
+  padding: 10px 20px;
+  border-radius: 80px 30px 80px 30px / 30px 80px 30px 80px;
+  flex-basis: 100%;
+  font-size: 20px;
+  text-shadow: 1px 1px 2px white;
+}
+
+/******************************************
+/******************************************
+/* Mobile
+/******************************************
+/******************************************/
+@media only screen and (max-width: 900px) {
+  body {
+    background: rgb(247, 243, 240);
+    font-family: system-ui;
+    margin: 0;
+    padding: 0;
+  }
+  header {
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: space-evenly;
+    font-weight: bold;
+    color: rgb(0, 0, 0);
+    background-image: url("../img/header-img.jpg");
+    background-size: cover;
+    height: 300px;
+    align-items: center;
+    box-shadow: 0 -60px 30px -10px rgb(247, 243, 240) inset;
+    clear: both;
+  }
+  #titleBox {
+    width: 80%;
+    background: rgba(255, 153, 0, 0.8);
+    border-radius: 50% 10% 50% 10% / 10% 50% 10% 50%;
+  }
+  #title {
+    display: flex;
+    justify-content: center;
+    color: white;
+    text-shadow: 2px 2px 4px #000000;
+    text-align: center;
+    top: 0;
+    font-size: 30px;
+  }
+  .opening {
+    display: flex;
+    justify-content: center;
+    color: white;
+    text-shadow: 2px 2px 4px #000000;
+    text-align: center;
+    font-size: 15px;
+  }
+
+  /*
+  Input Form
+  */
+  #inputForm {
+    width: 100%;
+    padding: 0 10%;
+    display: flex;
+    justify-content: center;
+    clear: both;
+  }
+  #inputBar {
+    border: rgb(255, 153, 0) solid 2px;
+    width: 100%;
+    height: 35px;
+    font-size: 12px;
+    font-weight: bold;
+    border-radius: 25px;
+    background: rgba(22, 22, 22, 0.5);
+    color: rgba(255, 255, 255, 1);
+    padding: 15px;
+  }
+  #inputBar::placeholder {
+    font-weight: bold;
+    opacity: 1;
+    color: rgb(255, 255, 255);
+  }
+  #inputBar:focus {
+    background: rgb(255, 255, 255);
+    color: rgb(0, 0, 0);
+    padding: 15px;
+    transition: 0.3s;
+  }
+  #addBttn {
+    width: 70px;
+    height: 35px;
+    margin-left: 10px;
+    background: rgb(255, 153, 0);
+    color: white;
+    font-weight: bold;
+    border-radius: 25px;
+    border: rgb(255, 153, 0) 2px solid;
+  }
+  #addBttn:hover {
+    background: rgba(22, 22, 22, 0.5);
+    border: rgb(255, 153, 0) 2px solid;
+    color: rgb(255, 255, 255);
+    transition: 0.3s;
+  }
+  #addBttn:active {
+    transform: translateY(1px);
+  }
+  /*
+  Trivia
+  */
+  #triviaDiv{
+    background: rgba(255, 153, 0, 0.5);
+    border-radius: 80px 30px 80px 30px / 30px 80px 30px 80px;
+    margin: 5px;
+  }
+  #triviaLabel {
+    color: white;
+    text-shadow: 1px 1px 2px black;
+    margin: 0;
+    font-size: 12px;
+    text-decoration: underline;
+    padding: 0;
+    text-align: center;
+  }
+  #trivia {
+    color: white;
+    text-shadow: 1px 1px 2px black;
+    margin: 0;
+    font-size: 12px;
+    text-align: center;
+    padding: 5px 10px;
+  }
+
+  /*
+  My Ingredients
+  */
+  #ingredientDiv {
+    margin: 10px;
+    background: rgba(255, 153, 0, 0.5);
+    border-radius: 30px 80px 30px 80px / 80px 30px 80px 30px;
+    padding: 5px 20px 20px 20px;
+  }
+  #ingredientTitle {
+    color: white;
+    text-shadow: 2px 2px 4px #000000;
+    font-size: 20px;
+  }
+  #ingredientList {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    list-style-type: square;
+    padding: 0;
+  }
+  .listItems {
+    font-size: 12px;
+    color: rgb(0, 0, 0);
+    flex-basis: 45%;
+    background: rgba(255, 255, 255, 0.5);
+    text-align: center;
+    list-style-type: none;
+    border-radius: 50px;
+    margin: 5px;
+    font-weight: bold;
+  }
+  /*
+  Search Clear Buttons
+  */
+  #searchClear {
+    display: flex;
+    justify-content: space-evenly;
+  }
+  #searchBttn {
+    width: 70px;
+    height: 40px;
+    margin-left: 10px;
+    background: rgb(255, 153, 0);
+    color: white;
+    font-weight: bold;
+    border-radius: 25px;
+    border: rgb(255, 153, 0) 2px solid;
+  }
+  #searchBttn:hover {
+    background: rgba(255, 153, 0, 0.6);
+    border: rgba(255, 153, 0, 1) 2px solid;
+    color: white;
+    transition: 0.3s;
+  }
+  #searchBttn:active {
+    transform: translateY(1px);
+  }
+  #clearBttn {
+    width: 70px;
+    height: 40px;
+    margin-left: 10px;
+    background: rgb(255, 66, 66);
+    color: rgba(255, 255, 255, 1);
+    font-weight: bold;
+    border-radius: 25px;
+    border: rgb(255, 66, 66) 2px solid;
+  }
+  #clearBttn:hover {
+    background: rgba(255, 66, 66, 0.6);
+    border: rgb(255, 66, 66) 2px solid;
+    color: white;
+    transition: 0.3s;
+  }
+  #clearBttn:active {
+    transform: translateY(1px);
+  }
+
+  /*
+  Recipes
+  */
+  #recipeDiv {
+    margin: 10px;
+    background: rgba(255, 153, 0, 0.5);
+    padding: 5px 20px 20px 20px;
+    border-radius: 80px 30px 80px 30px / 30px 80px 30px 80px;
+  }
+  #recipeTitle {
+    color: white;
+    text-shadow: 2px 2px 4px #000000;
+    font-size: 20px;
+    text-align: center;
+  }
+  .resultBox{
+    display: flex;
+    flex-flow: column wrap;
+    padding: 5px 10px 10px 10px;
+    margin: 10px 0;
+    background: rgb(255, 255, 255);
+    border-radius: 80px 30px 80px 30px / 30px 80px 30px 80px;
+    justify-content: space-evenly;
+  }
+  .foodName {
+    color: rgb(0, 0, 0);
+    text-shadow: 1px 1px 2px white;
+    font-size: 18px;
+    text-decoration: underline;
+    display: block;
+    align-self: flex-start;
+    flex-basis: 100%;
+  }
+  .foodImage {
+    border: black dotted 5px;
+    margin: 0;
+    width: 100%;
+    flex-basis: 100%;
+  }
+  .recipeIngredientContainer {
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: space-evenly;
+    padding: 15px 30px;
+    background:rgba(255, 153, 0, 0.5);
+    border-radius: 80px 30px 80px 30px / 30px 80px 30px 80px;
+    flex-basis: 100%;
+    margin: 5px 0;
+  }
+  .recipeIngredients{
+    color: rgb(255, 255, 255);
+    text-shadow: 1px 1px 2px rgb(255, 153, 0);
+    font-weight: bold;
+    font-size: 15px;
+  }
+  .instructions {
+    background:rgba(255, 153, 0, 0.5);
+    padding: 10px 20px;
+    border-radius: 80px 30px 80px 30px / 30px 80px 30px 80px;
+    flex-basis: 100%;
+    font-size: 15px;
+    margin: 5px 0;
+    text-shadow: 1px 1px 2px white;
+  }
+}
