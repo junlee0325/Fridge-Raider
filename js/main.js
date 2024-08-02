@@ -93,6 +93,7 @@ function searchRecipe() {
   )
     .then((res) => res.json())
     .then((data) => {
+      console.log(data)
       /*function sortLikes(a, b) {
        return b.likes - a.likes;
       }
