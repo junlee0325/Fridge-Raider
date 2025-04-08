@@ -121,7 +121,7 @@ function searchRecipe() {
             let foodImage = document.createElement("img");
             foodImage.className = "foodImage";
             foodImage.src = `${dataa[0].image}`;
-            foodImage.alt = "IMAGE NOT SHOWN";
+            foodImage.alt = "IMAGE NOT AVAILABLE";
             resultBox.appendChild(foodImage);
 
             let recipeIngredientContainer = document.createElement("ul");
@@ -137,7 +137,11 @@ function searchRecipe() {
 
             let instructions = document.createElement("p");
             instructions.className = "instructions";
-            instructions.innerHTML = `<p>${dataa[0].instructions}</p>`;
+            if(dataa[0].instructions.length > 0) {
+              instructions.innerHTML = `<p>${dataa[0].instructions}</p>`;
+            } else {
+              instructions.innerHTML = `<p>Instructions not available.</p>`;
+            }
             resultBox.appendChild(instructions);
           });
       });

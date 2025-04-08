@@ -35,6 +35,12 @@ body {
   margin: 0;
   padding: 0;
 }
+footer {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  padding: 5px;
+}
 header {
   display: flex;
   flex-flow: column wrap;
