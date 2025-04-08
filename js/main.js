@@ -16,7 +16,7 @@ const apiKey2 = "7dd52ca6c6ce4367b8b935170f8666c0";
 //Clears searchbar on refresh
 inputBar.value = "";
 
-fetch(`https://api.spoonacular.com/food/trivia/random?apiKey=${apiKey1}`)
+fetch(`https://api.spoonacular.com/food/trivia/random?apiKey=${apiKey2}`)
   .then((trRes) => trRes.json())
   .then((trData) => {
     console.log(trData.text)
@@ -37,12 +37,12 @@ function addIngredient(event) {
 
   //Checks through recipes to see if input is will return anything
   fetch(
-    `https://api.spoonacular.com/recipes/findByIngredients?ingredients=${inputValue.toLowerCase()}&number=1&apiKey=${apiKey1}`
+    `https://api.spoonacular.com/recipes/findByIngredients?ingredients=${inputValue.toLowerCase()}&number=1&apiKey=${apiKey2}`
   )
     .then((respo) => respo.json())
     .then((dataaa) => {
       if (dataaa.length !== 0) {
-        let listedIngredient = document.createElement("li");
+        let listedIngredient = document.createElement("span");
 
         listedIngredient.className = "listItems";
 
@@ -89,7 +89,7 @@ function searchRecipe() {
   console.log(joinedArray);
 
   fetch(
-    `https://api.spoonacular.com/recipes/findByIngredients?ingredients=${joinedArray}&ranking=1&number=5&apiKey=${apiKey1}`
+    `https://api.spoonacular.com/recipes/findByIngredients?ingredients=${joinedArray}&ranking=1&number=5&apiKey=${apiKey2}`
   )
     .then((res) => res.json())
     .then((data) => {
@@ -103,7 +103,7 @@ function searchRecipe() {
 
       data.forEach((x) => {
         fetch(
-          `https://api.spoonacular.com/recipes/informationBulk?ids=${x.id}&apiKey=${apiKey1}`
+          `https://api.spoonacular.com/recipes/informationBulk?ids=${x.id}&apiKey=${apiKey2}`
         )
           .then((resp) => resp.json())
           .then((dataa) => {
@@ -137,10 +137,10 @@ function searchRecipe() {
 
             let instructions = document.createElement("p");
             instructions.className = "instructions";
-            if(dataa[0].instructions.length > 0) {
+            if(dataa[0].instructions === "" || dataa[0].instructions == null) {
+              instructions.innerHTML = "<p>Instructions not available.</p>";
+            } else if(dataa[0].instructions.length > 0) {
               instructions.innerHTML = `<p>${dataa[0].instructions}</p>`;
-            } else {
-              instructions.innerHTML = `<p>Instructions not available.</p>`;
             }
             resultBox.appendChild(instructions);
           });
